@@ -1,5 +1,6 @@
 package com.prerna.userauthservicespringboot.models;
 
+import com.prerna.userauthservicespringboot.dtos.UserDTO;
 import jakarta.persistence.Entity;
 import jakarta.persistence.ManyToMany;
 
@@ -14,6 +15,15 @@ public class User extends BaseModel{
     private String password;
     @ManyToMany
     private List<Role> roles = new ArrayList<>();
+
+    public UserDTO toUserDTO() {
+        UserDTO userDTO = new UserDTO();
+        userDTO.setId(this.getId());
+        userDTO.setName(this.getName());
+        userDTO.setEmail(this.getEmail());
+        userDTO.setRoles(this.getRoles());
+        return userDTO;
+    }
 
     public String getEmail() {
         return email;

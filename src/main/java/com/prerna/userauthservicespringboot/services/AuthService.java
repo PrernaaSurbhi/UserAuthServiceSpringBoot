@@ -1,7 +1,10 @@
 package com.prerna.userauthservicespringboot.services;
 
 import com.prerna.userauthservicespringboot.models.User;
+import org.springframework.stereotype.Service;
 
+
+@Service("AuthService")
 public class AuthService implements IAuthService{
 
     @Override
@@ -11,6 +14,11 @@ public class AuthService implements IAuthService{
 
     @Override
     public Boolean validateToken(String token) {
+        return null;
+    }
+
+    @Override
+    public User login(String email, String Password) {
         return null;
     }
 
