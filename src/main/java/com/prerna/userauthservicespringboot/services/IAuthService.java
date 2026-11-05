@@ -9,6 +9,6 @@ public interface IAuthService {
 
     Boolean validateToken(String token);
 
-    User login(String email, String Password );
+    User login(String email, String password );
 
 }
